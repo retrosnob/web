@@ -7,15 +7,15 @@ Some new text
 
 i3 reference card
 
-The command to launch a recently downloaded Blackboard Collaborate file is: /usr/lib/jvm/java-7-oracle/bin$ javaws ~/Downloads/nativeplayback.jnlp
+The command to launch a recently downloaded Blackboard Collaborate file is: `/usr/lib/jvm/java-7-oracle/bin$ javaws ~/Downloads/nativeplayback.jnlp`
 
 Linux commands
 
-find -name *s383*
-ls | grep *s383* > outputfile
+```find -name *s383*```
+`ls | grep *s383* > outputfile`
 Using ffmpeg to change video file size, rotate video, preserve audio:
 
-ffmpeg -i MVI_3602.MOV -vf "transpose=2" -b:v 256k -c:a copy pip.mov
+`ffmpeg -i MVI_3602.MOV -vf "transpose=2" -b:v 256k -c:a copy pip.mov`
 Navigating the terminal: ctrl-left and -right, home, end, ctrl-u (clear whole line), ctrl-w (clear word), ctrl-r (search command history), tab. Drag files into terminal window. To run the last command except with sudo: sudo !! To RUN the last command that used cat: !cat. To see what it was: !cat:p. This represents the arguments from your last command: !$. The command
 
 history
