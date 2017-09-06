@@ -67,9 +67,63 @@ to see which program owns the command cmd.
 Alternatively you can use
 
 `dpkg -s \`
-j
+
 Finally you can use
 
 `dpkg-query -l \`
 
 which allows wildcards
+
+VPS Login
+
+`ssh admin@123.123.123.123 -p 6000`
+
+By default all new users have the ability to use sudo.
+
+**Installing MySQL-JDBC connector**
+
+Download from dev.mysql.com and install to /usr/local. Read the File System Hierarchy standard (FHS) for details about what each of the Linux directories is supposed to be for.
+
+**Using tar to extract/unzip a file**
+
+`tar -xvf thefile.tar.gz -C the/destination/folder`
+
+**Vim**
+
+You can change the colour scheme by typing 
+
+`:colo <TAB>`
+
+Keep pressing <TAB> to cycle through the available colour schemes. Many of them are designed only to work in GVim, rather than the terminal version of Vim.
+
+**Java**
+
+You can set the classpath with
+
+``sudo gvim /etc/environment``
+
+After saving this file use the following terminal command:
+
+``export CLASSPATH``
+
+**Environment Variables**
+
+Changing `/etc/environment` to include
+
+`CLASSPATH="/path/to/jar"`
+
+means you need to reboot. (You don't put `export CLASSPATH` into the `/etc/environment` file because it's not a script and doesn't run; indeed you MUSTN'T use the export command like this or changes to the environment variables won't be registered. Similarly it is wrong to try to execute `source /etc/environment` for the same reason. The `etc/environment` file is read during _login_ by the pam.env.so, or something, so any change to it can be reloaded by logging out and logging back in. A restart is not required.
+
+Alternatively, you can change
+
+`/etc/bash.bashrc`
+
+which will run when any user opens a shell.
+
+Finally you can change 
+
+`~/bash.bashrc`
+
+which will run if the user whose home directory it is opens a shell.
+
+The problem that I had with the mysql jdbc driver was that I had set (a) I had used `export CLASSPATH` in the `/etc/environment` file and (b) the path I had used was `/usr/local/mysql-connector-java-5.1.44.jar` when it should have been `/usr/local/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44.jar`.
