@@ -12,6 +12,7 @@ The command to launch a recently downloaded Blackboard Collaborate file is: `/us
 Linux commands
 
 ```find -name *s383*```
+
 `ls | grep *s383* > outputfile`
 
 Using ffmpeg to change video file size, rotate video, preserve audio:
@@ -127,3 +128,29 @@ Finally you can change
 which will run if the user whose home directory it is opens a shell.
 
 The problem that I had with the mysql jdbc driver was that I had set (a) I had used `export CLASSPATH` in the `/etc/environment` file and (b) the path I had used was `/usr/local/mysql-connector-java-5.1.44.jar` when it should have been `/usr/local/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44.jar`.
+
+**MySQL**
+
+`CREATE DATABASE "DBNAME";`
+
+`CREATE TABLE "TBLNAME" (
+id INT not null autoincrement,
+name varchar(32),
+comment varchar(200));`
+
+`create user "fred[@localhost]"
+identified by "hispassword";`
+
+`insert into TBLNAME (name, comment)
+values ("Jeff", "Interesting chap");`
+
+**Telnet**
+
+`telnet myserver.com 3306`
+
+This will try to connect on 3306. If the connection is refused it could be a firewall or it could be that the port is not open. SSH to the server and try
+
+`telnet localhost 3306`
+
+to see which it is.
+
