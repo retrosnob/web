@@ -67,11 +67,11 @@ You can type
 to see which program owns the command cmd.
 Alternatively you can use
 
-`dpkg -s \`
+`dpkg -s \ `
 
 Finally you can use
 
-`dpkg-query -l \`
+`dpkg-query -l \ `
 
 which allows wildcards
 
@@ -143,6 +143,12 @@ identified by "hispassword";`
 
 `insert into TBLNAME (name, comment)
 values ("Jeff", "Interesting chap");`
+
+I couldn't connect to the mysql server from my laptop and I didn't know if the server was listening to 3306 or perhaps there was a firewall in the way. As it turned out, I got onto the terminal on the server and ran `telnet localhost 3306` and found that mysql was running. This didn't work from a remote host though and it turned out that I needed to change the `bind-address = 127.0.0.1` line in the `/etc/mysql/my.cnf` configuration file to use the external ip address.
+
+You can bounce the server with
+
+`service mysql restart`
 
 **Telnet**
 
