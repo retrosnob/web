@@ -5,7 +5,13 @@ Hello web!
 
 Some new text
 
-i3 reference card
+## i3 reference card
+
+To bind a key combination in i3.
+
+`bindsym Control+Mod1+L exec i3lock -c 00000`
+
+This sets Ctrl-Alt-L to lock the screen using a black background.
 
 The command to launch a recently downloaded Blackboard Collaborate file is: `/usr/lib/jvm/java-7-oracle/bin$ javaws ~/Downloads/nativeplayback.jnlp`
 
